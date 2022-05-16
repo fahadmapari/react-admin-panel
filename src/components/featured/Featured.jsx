@@ -1,5 +1,10 @@
 import React from "react";
-import { MoreVert } from "@mui/icons-material";
+import {
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+  MoreVert,
+} from "@mui/icons-material";
+import Progressbar from "react-js-progressbar";
 import "./featured.scss";
 
 const Featured = () => {
@@ -10,7 +15,45 @@ const Featured = () => {
         <MoreVert fontSize="small" />
       </div>
       <div className="bottom">
-        <div className="featuredChart"></div>
+        <div className="featuredChart">
+          <Progressbar
+            pathColor="#7451f8"
+            input={60}
+            pathShadow="none"
+            pathWidth={7}
+          />
+        </div>
+        <p className="title">Total sales made today</p>
+        <p className="amount">$420</p>
+        <p className="desc">
+          Previous transaction processing, Last payments may not be included.
+        </p>
+
+        <div className="summary">
+          <div className="item">
+            <div className="itemTitle">Target</div>
+            <div className="itemResult negative">
+              <KeyboardArrowDown fontSize="small" />
+              <div className="resultAmount">$12.4k</div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="itemTitle">Target</div>
+            <div className="itemResult positive">
+              <KeyboardArrowUp fontSize="small" />
+              <div className="resultAmount">$12.4k</div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="itemTitle">Target</div>
+            <div className="itemResult positive">
+              <KeyboardArrowUp fontSize="small" />
+              <div className="resultAmount">$12.4k</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
